@@ -21,7 +21,7 @@
         <template slot="prepend">联系方式</template>
       </el-input>
       <div style="width: 66%; float: left; margin-left:2%;">
-        <span style="width: 56px; float:left; background-color: #f5f7fa; color: #909399; border: 1px solid #dcdfe6; border-radius: 4px 0 0 4px;padding: 10px 20px;">
+        <span style="width: 56px; float:left; background-color: #f5f7fa; color: #909399; border: 1px solid #dcdfe6; border-radius: 4px 0 0 4px;padding: 12px 20px;">
           企业规模
         </span>
         <el-select v-model="value4" clearable placeholder="请选择" style="float:left; width: 30%;">
@@ -32,7 +32,7 @@
             :value="item.value">
           </el-option>
         </el-select>
-        <span style="margin-left: 30px; width: 56px; float:left; background-color: #f5f7fa; color: #909399; border: 1px solid #dcdfe6; border-radius: 4px 0 0 4px;padding: 10px 20px;">
+        <span style="margin-left: 30px; width: 56px; float:left; background-color: #f5f7fa; color: #909399; border: 1px solid #dcdfe6; border-radius: 4px 0 0 4px;padding: 12px 20px;">
           企业性质
         </span>
         <el-select v-model="value4" clearable placeholder="请选择" style="float:left; width: 30%;">
@@ -47,7 +47,7 @@
     </div>
     <div class="cust-rows" style="margin-top: 10px; height: 60px; width: 100%;">
       <div style="width: 30%; float: left;">
-        <span style="width: 56px; float:left; background-color: #f5f7fa; color: #909399; border: 1px solid #dcdfe6; border-radius: 4px 0 0 4px;padding: 10px 20px;">
+        <span style="width: 56px; float:left; background-color: #f5f7fa; color: #909399; border: 1px solid #dcdfe6; border-radius: 4px 0 0 4px;padding: 12px 20px;">
           &nbsp;业务员&nbsp;
         </span>
         <el-select v-model="value4" clearable placeholder="请选择" style="float:left; width: 62%;">
@@ -60,7 +60,7 @@
         </el-select>
       </div>
       <div style="width: 66%; float: left; margin-left:2%;">
-        <span style="width: 56px; float:left; background-color: #f5f7fa; color: #909399; border: 1px solid #dcdfe6; border-radius: 4px 0 0 4px;padding: 10px 20px;">
+        <span style="width: 56px; float:left; background-color: #f5f7fa; color: #909399; border: 1px solid #dcdfe6; border-radius: 4px 0 0 4px;padding: 12px 20px;">
           评级
         </span>
         <el-select v-model="value4" clearable placeholder="请选择" style="float:left; width: 30%;">

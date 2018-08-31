@@ -5,7 +5,7 @@
         <template slot="prepend">磨具编号</template>
       </el-input>
       <span class="span-select">
-        <span style="width:28%; height: 40px; background: rgb(221, 221, 221);line-height:40px; border-radius: 6px 0 0 6px; float: left;">磨具类型</span>
+        <span style="width:28%; height: 40px; background: #f5f7fa; line-height:40px; border-radius: 6px 0 0 6px; float: left;">磨具类型</span>
         <el-select v-model="value" placeholder="请选择">
           <el-option
             v-for="item in options"
@@ -34,7 +34,7 @@
     </div>
     <div class="input-groups-abr last">
       <span class="span-select">
-        <span style="width:40%; height: 40px; background: rgb(221, 221, 221);line-height:40px; border-radius: 6px 0 0 6px; float: left;">所属工序</span>
+        <span style="width:40%; height: 40px; background: #f5f7fa; line-height:40px; border-radius: 6px 0 0 6px; float: left;">所属工序</span>
         <el-select v-model="value" placeholder="请选择">
           <el-option
             v-for="item in options"
@@ -49,7 +49,7 @@
         <template slot="prepend">存放地点</template>
       </el-input>
       <span class="span-select" style="float:right; margin:0;">
-        <span style="width:40%; height: 40px; background: rgb(221, 221, 221);line-height:40px; border-radius: 6px 0 0 6px; float: left;">负责人</span>
+        <span style="width:40%; height: 40px; background: #f5f7fa;line-height:40px; border-radius: 6px 0 0 6px; float: left;">负责人</span>
         <el-select v-model="value" placeholder="代表验收产品">
           <el-option
             v-for="item in options"

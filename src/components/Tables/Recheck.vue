@@ -309,6 +309,7 @@ export default {
 }
 </script>
 <style lang="scss">
+  // @import '@/assets/css/Tables/index.scss';
 .clearfix {
   margin-top: 1rem;
 }

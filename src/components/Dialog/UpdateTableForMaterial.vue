@@ -1,35 +1,19 @@
 <template>
   <el-dialog class="update-table-for-material" title="新增原材料资料" :visible.sync="dialogVisible" width="75%">
+    <!-- <div style="width: 100%; height: 40px; margin: 10px 0; background: #409EFF;"></div> -->
     <div class="select-group">
-      <el-input placeholder="请输入内容">
-        <template slot="prepend">原材料编号</template>
-      </el-input>
-      <el-input placeholder="请输入内容">
-        <template slot="prepend">品名/材质</template>
-      </el-input>
-      &nbsp;代表验收产品: &nbsp;
-      <el-select v-model="value" placeholder="代表验收产品">
-        <el-option
-          v-for="item in options"
-          :key="item.value"
-          :label="item.label"
-          :value="item.value">
-        </el-option>
-      </el-select>
-      默认单位: &nbsp;
-      <el-select v-model="value" placeholder="默认单位">
-        <el-option
-          v-for="item in options"
-          :key="item.value"
-          :label="item.label"
-          :value="item.value">
-        </el-option>
-      </el-select>
-      <br>
-      <div class="next-select">
-        <span class="span-select">
-          检查方案: &nbsp;
-          <el-select v-model="value" placeholder="检查方案">
+      <div class="cust-rows" style="width: 100%; height: 60px;">
+        <el-input placeholder="请输入内容" v-model="input" class="first-col-row" style="width: 23%; float: left; margin-left:1%;">
+          <template slot="prepend">原材料编号</template>
+        </el-input>
+        <el-input placeholder="请输入内容" v-model="input" class="sec-col-row" style="width: 20%; float: left; margin-left:1%;">
+          <template slot="prepend">品名/材质</template>
+        </el-input>
+        <div style="width: 50%; float: left; margin-left:1%;">
+          <span style="width: 90px; float:left; background-color: #f5f7fa; color: #909399; border: 1px solid #dcdfe6; border-radius: 4px 0 0 4px;padding: 12px 20px;">
+            代表验收产品
+          </span>
+          <el-select v-model="value" clearable placeholder="请选择" style="float:left; width: 25%;">
             <el-option
               v-for="item in options"
               :key="item.value"
@@ -37,14 +21,40 @@
               :value="item.value">
             </el-option>
           </el-select>
-        </span>
-        <el-input placeholder="请输入内容" class="descrption">
-          <template slot="prepend">说明</template>
+          <span style="margin-left: 20px; width: 60px; float:left; background-color: #f5f7fa; color: #909399; border: 1px solid #dcdfe6; border-radius: 4px 0 0 4px;padding: 12px 20px;">
+            企业性质
+          </span>
+          <el-select v-model="value" clearable placeholder="请选择" style="float:left; width: 25%;">
+            <el-option
+              v-for="item in options"
+              :key="item.value"
+              :label="item.label"
+              :value="item.value">
+            </el-option>
+          </el-select>
+        </div>
+      </div>
+      <div class="cust-rows" style="width: 100%; height: 60px;">
+        <div style="width: 23%; float: left; margin-left:1%;">
+          <span style="width: 70px; float:left; background-color: #f5f7fa; color: #909399; border: 1px solid #dcdfe6; border-radius: 4px 0 0 4px;padding: 12px 20px;">
+            检查方案
+          </span>
+          <el-select v-model="value" clearable placeholder="请选择" style="float:left; width: 55%;">
+            <el-option
+              v-for="item in options"
+              :key="item.value"
+              :label="item.label"
+              :value="item.value">
+            </el-option>
+          </el-select>
+        </div>
+        <el-input placeholder="请输入内容" v-model="input" class="first-col-row" style="width: 69%; float: left; margin-left: 1%; ">
+          <template slot="prepend">&nbsp;&nbsp;&nbsp;说&nbsp;&nbsp;明&nbsp;&nbsp;&nbsp;</template>
         </el-input>
       </div>
     </div>
     <div class="icon-info">
-      <span style="width:100px; height:40px; background: #aaa; margin-left:0; border-radius: 6px 6px 0 0;">检测目标</span>
+      <span style="width:100px; height:40px; background: #409EFF; color: #fff; margin-left:0; border-radius: 6px 6px 0 0;">检测目标</span>
       <span><i class="el-icon-edit"></i></span>
       <span><i class="el-icon-edit-outline"></i></span>
       <span><i class="el-icon-delete"></i></span>
@@ -62,8 +72,9 @@
       <el-table-column prop="groups" label="规格检测分组" align="center"></el-table-column>
     </el-table>
     <span slot="footer" class="dialog-footer">
+      <el-button type="primary" @click="emitConfirm">保 存</el-button>
+      <el-button type="primary" class="sub-add" @click="emitCancel">保存并新增</el-button>
       <el-button @click="emitCancel">取 消</el-button>
-      <el-button type="primary" @click="emitConfirm">确 定</el-button>
     </span>
   </el-dialog>
 </template>
@@ -85,6 +96,7 @@ export default {
   data() {
     return {
       dialogVisible: this.visible,
+      input: '',
       options: [
         {
           value: '选项1',
@@ -116,47 +128,7 @@ export default {
 </script>
 
 <style lang="scss">
-  .select-group {
-    position: relative;
-    height: 120px;
-    .el-input {
-      width: 25%;
-    }
-    .el-select {
-      display: inline-block;
-      width: 15%;
-      .el-input {
-        width: 100%;
-      }
-      .el-input__inner {
-        width: 100%;
-      }
-    }
-    .next-select {
-      float: left;
-      margin: 2% 2% 2% 2%;
-      width: 100%;
-      .span-select {
-        float: left;
-        width: 26%;
-        .el-select {
-          width: 70%;
-        }
-      }
-      .descrption {
-        float: left;
-        width: 70%;
-      }
-    }
-  }
-  .icon-info {
-    width: 100%;
-    background: yellow;
-    line-height: 40px;
-    span {
-      float: left;
-      margin-left: 20px;
-      cursor: pointer;
-    }
-  }
+@import '@/assets/css/Dialog/index.scss';
+// 开始
+@import '@/assets/css/Dialog/Material.scss';
 </style>

@@ -5,12 +5,12 @@
         <el-menu-item index="/test" v-if="route.children[0].path === 'test' && !route.hidden" :key="index">
           <template>
             <router-link :to="route.path" :key="route.name">
-              <span>{{route.name}}</span>
+              <span style="font-size: 1.2rem; height: 40px; line-height: 40px;">{{route.name}}</span>
             </router-link>
           </template>
         </el-menu-item>
-        <el-submenu v-if="route.hidden" :key="index" :index="route.path">
-          <template slot="title">{{route.name}}</template>
+        <el-submenu v-if="route.hidden" :key="index" :index="route.path" style="height: 40px; line-height: 40px;">
+          <template slot="title" style="height: 40px; line-height: 40px;">{{route.name}}</template>
           <template v-for="child in route.children">
             <router-link :to="route.path + '/' + child.path" :key="child.name">
               <el-menu-item :index="route.path + '/' + child.path">
@@ -22,7 +22,7 @@
       </template>
       <search-button :placeholder="placeholder"/>
       <el-badge class="item" :value="200" :max="99">
-        <el-button class="share-button" icon="el-icon-bell" type="primary" circle></el-button>
+        <el-button class="share-button" icon="el-icon-bell" type="primary"></el-button>
       </el-badge>
     </el-menu>
   </div>
@@ -66,20 +66,5 @@ export default {
 </script>
 
 <style lang="scss">
-
-.nav {
-  .search-btn {
-    margin-top: 10px;
-  }
-  position: relative;
-  .el-icon-arrow-down {
-    color: #fff;
-  }
-  .item {
-    position: absolute;
-    right: 10%;
-    top: 18%;
-  }
-}
-
+  @import '@/assets/css/Nav.scss';
 </style>

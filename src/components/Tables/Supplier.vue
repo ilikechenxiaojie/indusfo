@@ -296,35 +296,5 @@ export default {
 }
 </script>
 <style lang="scss">
-.informs {
-  body .el-table th.gutter {
-    display: table-cell !important;
-  }
-  .clearfix {
-    margin-top: 1rem;
-  }
-  .bage-item {
-    float: left;
-  }
-  .el-button-group {
-    position: relative;
-    .el-input {
-      position: absolute;
-      left: -100%;
-      top: 0;
-      width: 80px;
-    }
-  }
-  &-card {
-    .btn-group {
-      .search-btn .input-item {
-        float: left;
-      }
-      .el-button {
-        margin-left: 0px;
-        float: left;
-      }
-    }
-  }
-}
+  @import '@/assets/css/Tables/index.scss';
 </style>

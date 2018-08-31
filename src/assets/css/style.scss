@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 0.8rem;
+}
+a {
+  text-decoration: none;
+}
+html,
+body {
+  height: 100%;
+}
+body .el-table th.gutter {
+  display: table-cell !important;
+}
+.el-table td,
+.el-table th {
+  height: 20px;
+  padding: 6px 0;
+}
+.el-table th {
+  color: #bbb;
+}

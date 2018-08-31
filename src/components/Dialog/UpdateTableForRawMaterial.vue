@@ -2,7 +2,7 @@
   <el-dialog class="update-table-for-raw-material" title="新增原材料资料" :visible.sync="dialogVisible" width="80%">
     <div class="cust-rows" style="margin-top: 6px; height: 60px; width: 100%;">
       <div style="width: 30%; float: left;">
-        <span style="width: 65px; float:left; background-color: #f5f7fa; color: #909399; border: 1px solid #dcdfe6; border-radius: 4px 0 0 4px;padding: 10px 20px;">
+        <span style="width: 65px; float:left; background-color: #f5f7fa; color: #909399; border: 1px solid #dcdfe6; border-radius: 4px 0 0 4px;padding: 12px 20px;">
           品名/材质
         </span>
         <el-select v-model="value4" clearable placeholder="请选择" style="float:left; width: 59%;">
@@ -15,7 +15,7 @@
         </el-select>
       </div>
       <div style="width: 66%; float: left; margin-left:2%;">
-        <span style="width: 65px; float:left; background-color: #f5f7fa; color: #909399; border: 1px solid #dcdfe6; border-radius: 4px 0 0 4px;padding: 10px 20px;">
+        <span style="width: 65px; float:left; background-color: #f5f7fa; color: #909399; border: 1px solid #dcdfe6; border-radius: 4px 0 0 4px;padding: 12px 20px;">
           供应商
         </span>
         <el-select v-model="value4" clearable placeholder="请选择" style="float:left; width: 30%;">
@@ -36,7 +36,7 @@
         <el-input placeholder="请输入内容" v-model="input" class="first-col-row" style="width: 48%; float: left;">
           <template slot="prepend">&nbsp;&nbsp;&nbsp;数&nbsp;&nbsp;&nbsp;&nbsp;量&nbsp;&nbsp;</template>
         </el-input>
-        <span style="margin-left: 18px; width: 65px; float:left; background-color: #f5f7fa; color: #909399; border: 1px solid #dcdfe6; border-radius: 4px 0 0 4px;padding: 10px 20px;">
+        <span style="margin-left: 18px; width: 65px; float:left; background-color: #f5f7fa; color: #909399; border: 1px solid #dcdfe6; border-radius: 4px 0 0 4px;padding: 12px 20px;">
           单&nbsp;&nbsp;位
         </span>
         <el-select v-model="value4" clearable placeholder="请选择" style="float:left; width: 30%;">

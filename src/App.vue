@@ -12,20 +12,10 @@ export default {
 }
 </script>
 
-<style>
-* {
-  margin: 0;
-  padding: 0;
-}
+<style lang="scss">
 @import 'normalize.css/normalize.css';
-a {
-  text-decoration: none;
-}
-html,
-body {
-  height: 100%;
-}
-
+@import '@/assets/css/style.scss';
+@import '@/assets/css/animate.scss';
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
