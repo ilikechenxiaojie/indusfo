@@ -5,26 +5,22 @@
 ## Build Setup
 
 ``` bash
+# the ui is so ugly lastest update hehe
 # install dependencies
 npm install
 
-# serve with hot reload at localhost:8080
+# install dependencies
+npm rebuild node-sass
+
+# serve with hot reload at localhost:8017
 npm run dev
+
+# if you have some problems as "no such file or directory, scandir 'X:\xxx\indusfo\node_modules\node-sass\vendor",
+## after npm run dev, you can use below order to solve
+npm rebuild node-sass
 
 # build for production with minification
 npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
