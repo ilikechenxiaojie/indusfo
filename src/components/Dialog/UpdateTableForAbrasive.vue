@@ -64,8 +64,9 @@
         <template slot="prepend">说明</template>
       </el-input>
     <span slot="footer" class="dialog-footer">
+      <el-button type="primary" @click="emitConfirm">保 存</el-button>
+      <el-button type="primary" class="sub-add" @click="emitCancel">保存并新增</el-button>
       <el-button @click="emitCancel">取 消</el-button>
-      <el-button type="primary" @click="emitConfirm">确 定</el-button>
     </span>
   </el-dialog>
 </template>

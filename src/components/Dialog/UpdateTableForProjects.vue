@@ -1,11 +1,89 @@
 <template>
   <el-dialog class="update-table-for-projects" title="新增磨具资料" :visible.sync="dialogVisible" width="80%">
     <div class="content" style=" width: 100%; height: 600px;">
-      <div class="header" style=" width: 100%; height: 150px; background: red;">
-
+      <div class="header" style=" width: 100%;">
+        <div class="cust-rows" style="width: 100%; height: 60px;">
+          <div style="width: 23%; float: left; margin-left:1%;" class="own-defined-select">
+            <span class="select-before"style="width: 40px;">
+              客户
+            </span>
+            <el-select v-model="value" clearable placeholder="请选择" style="float:left; width: 69%;">
+              <el-option
+                v-for="item in options"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value">
+              </el-option>
+            </el-select>
+          </div>
+          <el-input placeholder="请输入内容" v-model="input" class="first-col-row" style="width: 23%; float: left; margin-left:1%;">
+            <template slot="prepend">客户型号</template>
+          </el-input>
+          <el-input placeholder="请输入内容" v-model="input" class="sec-col-row" style="width: 20%; float: left; margin-left:1%;">
+            <template slot="prepend">产品编码</template>
+          </el-input>
+          <el-input placeholder="请输入内容" v-model="input" class="sec-col-row" style="width: 20%; float: left; margin-left:1%;">
+            <template slot="prepend">产品名称</template>
+          </el-input>
+        </div>
+        <div class="cust-rows" style="width: 100%; height: 60px;">
+          <el-input placeholder="请输入内容" v-model="input" class="first-col-row" style="width: 23%; float: left; margin-left:1%;">
+            <template slot="prepend">规格信号</template>
+          </el-input>
+          <el-input placeholder="请输入内容" v-model="input" class="sec-col-row" style="width: 23%; float: left; margin-left:1%;">
+            <template slot="prepend">毛坯重量</template>
+          </el-input>
+          <el-input placeholder="请输入内容" v-model="input" class="sec-col-row" style="width: 20%; float: left; margin-left:1%;">
+            <template slot="prepend">成品重量</template>
+          </el-input>
+          <div style="width: 25%; float: left; margin-left:1%;" class="own-defined-select">
+            <span class="select-before">
+              工艺版本
+            </span>
+            <el-select v-model="value" clearable placeholder="请选择" style="float:left; width: 60%;">
+              <el-option
+                v-for="item in options"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value">
+              </el-option>
+            </el-select>
+          </div>
+        </div>
+        <div class="cust-rows" style="width: 100%; height: 60px;">
+          <div style="width: 23%; float: left; margin-left:1%;" class="own-defined-select">
+            <span class="select-before"style="width: 40px;">
+              材质
+            </span>
+            <el-select v-model="value" clearable placeholder="请选择" style="float:left; width: 69%;">
+              <el-option
+                v-for="item in options"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value">
+              </el-option>
+            </el-select>
+          </div>
+          <div style="width: 23%; float: left; margin-left:1%;" class="own-defined-select">
+            <span class="select-before"style="width: 40px;">
+              单位
+            </span>
+            <el-select v-model="value" clearable placeholder="请选择" style="float:left; width: 69%;">
+              <el-option
+                v-for="item in options"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value">
+              </el-option>
+            </el-select>
+          </div>
+          <el-input placeholder="请输入内容" v-model="input" class="first-col-row" style="width: 50%; float: left; margin-left:1%;">
+            <template slot="prepend">说明</template>
+          </el-input>
+        </div>
       </div>
       <div class="tables">
-        <div class="left" style=" width: 14%; background: yellow; float: left; height: 300px;">
+        <div class="left" style=" width: 14%;   float: left; height: 300px;">
           <el-table :data="data" style="width: 100%;" v-loading="loading" element-loading-text="给我一点时间" border>
             <el-table-column prop="id" label="序号" align="center"></el-table-column>
             <el-table-column prop="singleNum" label="工序" align="center"></el-table-column>
@@ -91,8 +169,9 @@
       </div>
     </div>
     <span slot="footer" class="dialog-footer">
+      <el-button type="primary" @click="emitConfirm">保 存</el-button>
+      <el-button type="primary" class="sub-add" @click="emitCancel">保存并新增</el-button>
       <el-button @click="emitCancel">取 消</el-button>
-      <el-button type="primary" @click="emitConfirm">确 定</el-button>
     </span>
   </el-dialog>
 </template>
@@ -142,6 +221,7 @@ export default {
 </script>
 
 <style lang="scss">
+@import '@/assets/css/Dialog/index.scss';
   .update-table-for-projects {
     .el-tabs__content {
       .el-table td, .el-table th {

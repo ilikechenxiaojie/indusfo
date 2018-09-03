@@ -3,23 +3,41 @@
   background-color: #33cbcc;
   border-color: #33cbcc;
 }
+
 .el-dialog__header {
   width: 100%;
   padding: 20px 0;
   text-align: left;
   background: rgb(67, 142, 184);
   font-weight: bold;
+
   .el-dialog__title {
     color: #fff;
     height: 30px;
     margin-left: 20px;
   }
 }
+
 .el-dialog__headerbtn .el-dialog__close {
   color: #fff;
   font-weight: bold;
   font-size: 1.2rem;
 }
+
 .el-table th .cell {
   font-size: 12px;
+}
+
+.cust-rows {
+  .own-defined-select {
+    .select-before {
+      padding: 13px 20px;
+      width: 65px;
+      float: left;
+      background-color: #f5f7fa;
+      color: #909399;
+      border: 1px solid #dcdfe6;
+      border-radius: 4px 0 0 4px;
+    }
+  }
 }

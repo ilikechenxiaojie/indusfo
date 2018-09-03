@@ -1,5 +1,5 @@
 <template>
-  <el-dialog class="update-table-for-supplier" title="新增客户资料" :visible.sync="dialogVisible" width="60%">
+  <el-dialog class="update-table-for-supplier" title="新增客户资料111" :visible.sync="dialogVisible" width="60%">
     <div class="cust-rows" style="width: 100%; height: 60px;">
       <el-input placeholder="请输入内容" v-model="input" class="first-col-row" style="width: 30%; float: left;">
         <template slot="prepend">供应商编码</template>
@@ -20,8 +20,8 @@
       <el-input placeholder="请输入内容" v-model="input" class="first-col-row" style="width: 30%; float: left;">
         <template slot="prepend">&nbsp;联系方式&nbsp;&nbsp;</template>
       </el-input>
-      <div style="width: 66%; float: left; margin-left:2%;">
-        <span style="width: 65px; float:left; background-color: #f5f7fa; color: #909399; border: 1px solid #dcdfe6; border-radius: 4px 0 0 4px;padding: 12px 20px;">
+      <div style="width: 66%; float: left; margin-left:2%;" class="own-defined-select">
+        <span class="select-before">
           企业规模
         </span>
         <el-select v-model="value4" clearable placeholder="请选择" style="float:left; width: 30%;">
@@ -32,7 +32,7 @@
             :value="item.value">
           </el-option>
         </el-select>
-        <span style="margin-left: 18px; width: 65px; float:left; background-color: #f5f7fa; color: #909399; border: 1px solid #dcdfe6; border-radius: 4px 0 0 4px;padding: 12px 20px;">
+        <span class="select-before" style="margin-left: 18px;">
           企业性质
         </span>
         <el-select v-model="value4" clearable placeholder="请选择" style="float:left; width: 30%;">
@@ -46,8 +46,8 @@
       </div>
     </div>
     <div class="cust-rows" style="margin-top: 6px; height: 60px; width: 100%;">
-      <div style="width: 30%; float: left;">
-        <span style="width: 65px; float:left; background-color: #f5f7fa; color: #909399; border: 1px solid #dcdfe6; border-radius: 4px 0 0 4px;padding: 12px 20px;">
+      <div style="width: 30%; float: left;" class="own-defined-select">
+        <span class="select-before">
           &nbsp;环评情况&nbsp;
         </span>
         <el-select v-model="value4" clearable placeholder="请选择" style="float:left; width: 59%;">
@@ -59,8 +59,8 @@
           </el-option>
         </el-select>
       </div>
-      <div style="width: 66%; float: left; margin-left:2%;">
-        <span style="width: 65px; float:left; background-color: #f5f7fa; color: #909399; border: 1px solid #dcdfe6; border-radius: 4px 0 0 4px;padding: 12px 20px;">
+      <div style="width: 66%; float: left; margin-left:2%;" class="own-defined-select">
+        <span class="select-before">
           安评情况
         </span>
         <el-select v-model="value4" clearable placeholder="请选择" style="float:left; width: 30%;">
@@ -71,7 +71,7 @@
             :value="item.value">
           </el-option>
         </el-select>
-        <span style="margin-left: 18px; width: 65px; float:left; background-color: #f5f7fa; color: #909399; border: 1px solid #dcdfe6; border-radius: 4px 0 0 4px;padding: 12px 20px;">
+        <span class="select-before" style="margin-left: 18px;">
           能评情况
         </span>
         <el-select v-model="value4" clearable placeholder="请选择" style="float:left; width: 30%;">
@@ -85,8 +85,8 @@
       </div>
     </div>
     <div class="cust-rows" style="margin-top: 6px; height: 60px; width: 100%;">
-      <div style="width: 30%; float: left;">
-        <span style="width: 65px; float:left; background-color: #f5f7fa; color: #909399; border: 1px solid #dcdfe6; border-radius: 4px 0 0 4px;padding: 12px 20px;">
+      <div style="width: 30%; float: left;" class="own-defined-select">
+        <span class="select-before">
           &nbsp;评级&nbsp;
         </span>
         <el-select v-model="value4" clearable placeholder="请选择" style="float:left; width: 59%;">
@@ -100,8 +100,9 @@
       </div>
     </div>
     <span slot="footer" class="dialog-footer">
+      <el-button type="primary" @click="emitConfirm">保 存</el-button>
+      <el-button type="primary" class="sub-add" @click="emitCancel">保存并新增</el-button>
       <el-button @click="emitCancel">取 消</el-button>
-      <el-button type="primary" @click="emitConfirm">确 定</el-button>
     </span>
   </el-dialog>
 </template>
@@ -157,6 +158,7 @@ export default {
 </script>
 
 <style lang="scss">
+@import '@/assets/css/Dialog/index.scss';
   .update-table-for-supplier {
     width: 100%;
     .cust-rows {

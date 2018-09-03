@@ -9,8 +9,8 @@
         <el-input placeholder="请输入内容" v-model="input" class="sec-col-row" style="width: 20%; float: left; margin-left:1%;">
           <template slot="prepend">品名/材质</template>
         </el-input>
-        <div style="width: 50%; float: left; margin-left:1%;">
-          <span style="width: 90px; float:left; background-color: #f5f7fa; color: #909399; border: 1px solid #dcdfe6; border-radius: 4px 0 0 4px;padding: 12px 20px;">
+        <div style="width: 50%; float: left; margin-left:1%;" class="own-defined-select">
+          <span class="select-before" style="width: 90px; float:left; background-color: #f5f7fa; color: #909399; border: 1px solid #dcdfe6; border-radius: 4px 0 0 4px;">
             代表验收产品
           </span>
           <el-select v-model="value" clearable placeholder="请选择" style="float:left; width: 25%;">
@@ -21,7 +21,7 @@
               :value="item.value">
             </el-option>
           </el-select>
-          <span style="margin-left: 20px; width: 60px; float:left; background-color: #f5f7fa; color: #909399; border: 1px solid #dcdfe6; border-radius: 4px 0 0 4px;padding: 12px 20px;">
+          <span style="margin-left: 20px; width: 60px; float:left; background-color: #f5f7fa; color: #909399; border: 1px solid #dcdfe6; border-radius: 4px 0 0 4px;padding: 13px 20px;">
             企业性质
           </span>
           <el-select v-model="value" clearable placeholder="请选择" style="float:left; width: 25%;">
@@ -35,8 +35,8 @@
         </div>
       </div>
       <div class="cust-rows" style="width: 100%; height: 60px;">
-        <div style="width: 23%; float: left; margin-left:1%;">
-          <span style="width: 70px; float:left; background-color: #f5f7fa; color: #909399; border: 1px solid #dcdfe6; border-radius: 4px 0 0 4px;padding: 12px 20px;">
+        <div style="width: 23%; float: left; margin-left:1%;" class="own-defined-select">
+          <span class="select-before" style=" width: 70px; float:left; background-color: #f5f7fa; color: #909399; border: 1px solid #dcdfe6; border-radius: 4px 0 0 4px;">
             检查方案
           </span>
           <el-select v-model="value" clearable placeholder="请选择" style="float:left; width: 55%;">

@@ -20,8 +20,8 @@
       <el-input placeholder="请输入内容" v-model="input" class="first-col-row" style="width: 30%; float: left;">
         <template slot="prepend">联系方式</template>
       </el-input>
-      <div style="width: 66%; float: left; margin-left:2%;">
-        <span style="width: 56px; float:left; background-color: #f5f7fa; color: #909399; border: 1px solid #dcdfe6; border-radius: 4px 0 0 4px;padding: 12px 20px;">
+      <div style="width: 66%; float: left; margin-left:2%;" class="own-defined-select">
+        <span class="select-before" style="width: 56px;">
           企业规模
         </span>
         <el-select v-model="value4" clearable placeholder="请选择" style="float:left; width: 30%;">
@@ -32,7 +32,7 @@
             :value="item.value">
           </el-option>
         </el-select>
-        <span style="margin-left: 30px; width: 56px; float:left; background-color: #f5f7fa; color: #909399; border: 1px solid #dcdfe6; border-radius: 4px 0 0 4px;padding: 12px 20px;">
+        <span class="select-before" style="margin-left: 30px; width: 56px;">
           企业性质
         </span>
         <el-select v-model="value4" clearable placeholder="请选择" style="float:left; width: 30%;">
@@ -46,8 +46,8 @@
       </div>
     </div>
     <div class="cust-rows" style="margin-top: 10px; height: 60px; width: 100%;">
-      <div style="width: 30%; float: left;">
-        <span style="width: 56px; float:left; background-color: #f5f7fa; color: #909399; border: 1px solid #dcdfe6; border-radius: 4px 0 0 4px;padding: 12px 20px;">
+      <div style="width: 30%; float: left;"  class="own-defined-select">
+        <span class="select-before" style="width: 56px;">
           &nbsp;业务员&nbsp;
         </span>
         <el-select v-model="value4" clearable placeholder="请选择" style="float:left; width: 62%;">
@@ -59,8 +59,8 @@
           </el-option>
         </el-select>
       </div>
-      <div style="width: 66%; float: left; margin-left:2%;">
-        <span style="width: 56px; float:left; background-color: #f5f7fa; color: #909399; border: 1px solid #dcdfe6; border-radius: 4px 0 0 4px;padding: 12px 20px;">
+      <div style="width: 66%; float: left; margin-left:2%;" class="own-defined-select">
+        <span class="select-before" style="width: 56px;">
           评级
         </span>
         <el-select v-model="value4" clearable placeholder="请选择" style="float:left; width: 30%;">
@@ -74,8 +74,9 @@
       </div>
     </div>
     <span slot="footer" class="dialog-footer">
+      <el-button type="primary" @click="emitConfirm">保 存</el-button>
+      <el-button type="primary" class="sub-add" @click="emitCancel">保存并新增</el-button>
       <el-button @click="emitCancel">取 消</el-button>
-      <el-button type="primary" @click="emitConfirm">确 定</el-button>
     </span>
   </el-dialog>
 </template>
