@@ -22,7 +22,7 @@ export default {
 <style>
 .app-main {
   /* padding: 20px; */
-  padding:20px 0;
+  padding: 12px 0;
   min-height: 100%;
 }
 </style>

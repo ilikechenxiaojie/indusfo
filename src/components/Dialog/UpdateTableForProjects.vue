@@ -1,87 +1,93 @@
 <template>
-  <el-dialog class="update-table-for-projects" title="新增磨具资料" :visible.sync="dialogVisible" width="80%">
+  <el-dialog class="update-table-for-projects" title="新增产品资料" :visible.sync="dialogVisible" width="80%">
     <div class="content" style=" width: 100%; height: 600px;">
       <div class="header" style=" width: 100%;">
-        <div class="cust-rows" style="width: 100%; height: 60px;">
-          <div style="width: 23%; float: left; margin-left:1%;" class="own-defined-select">
-            <span class="select-before"style="width: 40px;">
-              客户
-            </span>
-            <el-select v-model="value" clearable placeholder="请选择" style="float:left; width: 69%;">
-              <el-option
-                v-for="item in options"
-                :key="item.value"
-                :label="item.label"
-                :value="item.value">
-              </el-option>
-            </el-select>
+        <div class="left" style="width: 80%; float: left;">
+          <div class="cust-rows" style="width: 100%; height: 60px;">
+            <div style="width: 23%; float: left; margin-left:1%;" class="own-defined-select">
+              <span class="select-before" style="width: 40px;">
+                客户
+              </span>
+              <el-select v-model="value" clearable placeholder="请选择" style="float:left; width: 62%;">
+                <el-option
+                  v-for="item in options"
+                  :key="item.value"
+                  :label="item.label"
+                  :value="item.value">
+                </el-option>
+              </el-select>
+            </div>
+            <el-input placeholder="请输入内容" v-model="input" class="first-col-row" style="width: 20%; float: left; margin-left:1%;">
+              <template slot="prepend">客户型号</template>
+            </el-input>
+            <el-input placeholder="请输入内容" v-model="input" class="sec-col-row" style="width: 20%; float: left; margin-left:1%;">
+              <template slot="prepend">产品编码</template>
+            </el-input>
+            <el-input placeholder="请输入内容" v-model="input" class="sec-col-row" style="width: 30%; float: left; margin-left:1%;">
+              <template slot="prepend">产品名称</template>
+            </el-input>
           </div>
-          <el-input placeholder="请输入内容" v-model="input" class="first-col-row" style="width: 23%; float: left; margin-left:1%;">
-            <template slot="prepend">客户型号</template>
-          </el-input>
-          <el-input placeholder="请输入内容" v-model="input" class="sec-col-row" style="width: 20%; float: left; margin-left:1%;">
-            <template slot="prepend">产品编码</template>
-          </el-input>
-          <el-input placeholder="请输入内容" v-model="input" class="sec-col-row" style="width: 20%; float: left; margin-left:1%;">
-            <template slot="prepend">产品名称</template>
-          </el-input>
+          <div class="cust-rows" style="width: 100%; height: 60px;">
+            <el-input placeholder="请输入内容" v-model="input" class="first-col-row" style="width: 23%; float: left; margin-left:1%;">
+              <template slot="prepend">规格信号</template>
+            </el-input>
+            <el-input placeholder="请输入内容" v-model="input" class="sec-col-row" style="width: 20%; float: left; margin-left:1%;">
+              <template slot="prepend">毛坯重量</template>
+            </el-input>
+            <el-input placeholder="请输入内容" v-model="input" class="sec-col-row" style="width: 20%; float: left; margin-left:1%;">
+              <template slot="prepend">成品重量</template>
+            </el-input>
+            <div style="width: 30%; float: left; margin-left:1%;" class="own-defined-select">
+              <span class="select-before">
+                工艺版本
+              </span>
+              <el-select v-model="value" clearable placeholder="请选择" style="float:left; width: 61%;">
+                <el-option
+                  v-for="item in options"
+                  :key="item.value"
+                  :label="item.label"
+                  :value="item.value">
+                </el-option>
+              </el-select>
+            </div>
+          </div>
+          <div class="cust-rows" style="width: 100%; height: 60px;">
+            <div style="width: 23%; float: left; margin-left:1%;" class="own-defined-select">
+              <span class="select-before" style="width: 40px;">
+                材质
+              </span>
+              <el-select v-model="value" clearable placeholder="请选择" style="float:left; width: 61%;">
+                <el-option
+                  v-for="item in options"
+                  :key="item.value"
+                  :label="item.label"
+                  :value="item.value">
+                </el-option>
+              </el-select>
+            </div>
+            <div style="width: 20%; float: left; margin-left:1%;" class="own-defined-select">
+              <span class="select-before" style="width: 40px;">
+                单位
+              </span>
+              <el-select v-model="value" clearable placeholder="请选择" style="float:left; width: 55%;">
+                <el-option
+                  v-for="item in options"
+                  :key="item.value"
+                  :label="item.label"
+                  :value="item.value">
+                </el-option>
+              </el-select>
+            </div>
+            <el-input placeholder="请输入内容" v-model="input" class="first-col-row" style="width: 51%; float: left; margin-left:1%;">
+              <template slot="prepend">说明</template>
+            </el-input>
+          </div>
         </div>
-        <div class="cust-rows" style="width: 100%; height: 60px;">
-          <el-input placeholder="请输入内容" v-model="input" class="first-col-row" style="width: 23%; float: left; margin-left:1%;">
-            <template slot="prepend">规格信号</template>
-          </el-input>
-          <el-input placeholder="请输入内容" v-model="input" class="sec-col-row" style="width: 23%; float: left; margin-left:1%;">
-            <template slot="prepend">毛坯重量</template>
-          </el-input>
-          <el-input placeholder="请输入内容" v-model="input" class="sec-col-row" style="width: 20%; float: left; margin-left:1%;">
-            <template slot="prepend">成品重量</template>
-          </el-input>
-          <div style="width: 25%; float: left; margin-left:1%;" class="own-defined-select">
-            <span class="select-before">
-              工艺版本
-            </span>
-            <el-select v-model="value" clearable placeholder="请选择" style="float:left; width: 60%;">
-              <el-option
-                v-for="item in options"
-                :key="item.value"
-                :label="item.label"
-                :value="item.value">
-              </el-option>
-            </el-select>
-          </div>
-        </div>
-        <div class="cust-rows" style="width: 100%; height: 60px;">
-          <div style="width: 23%; float: left; margin-left:1%;" class="own-defined-select">
-            <span class="select-before"style="width: 40px;">
-              材质
-            </span>
-            <el-select v-model="value" clearable placeholder="请选择" style="float:left; width: 69%;">
-              <el-option
-                v-for="item in options"
-                :key="item.value"
-                :label="item.label"
-                :value="item.value">
-              </el-option>
-            </el-select>
-          </div>
-          <div style="width: 23%; float: left; margin-left:1%;" class="own-defined-select">
-            <span class="select-before"style="width: 40px;">
-              单位
-            </span>
-            <el-select v-model="value" clearable placeholder="请选择" style="float:left; width: 69%;">
-              <el-option
-                v-for="item in options"
-                :key="item.value"
-                :label="item.label"
-                :value="item.value">
-              </el-option>
-            </el-select>
-          </div>
-          <el-input placeholder="请输入内容" v-model="input" class="first-col-row" style="width: 50%; float: left; margin-left:1%;">
-            <template slot="prepend">说明</template>
-          </el-input>
+        <div class="right" style="float: left; margin-left: 1%; height: 160px; width: 18%; background: yellow;">
+
         </div>
       </div>
+      <div class="clear" style="clear: both;"></div>
       <div class="tables">
         <div class="left" style=" width: 14%;   float: left; height: 300px;">
           <el-table :data="data" style="width: 100%;" v-loading="loading" element-loading-text="给我一点时间" border>

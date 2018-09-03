@@ -1,11 +1,11 @@
 <template>
-  <el-dialog class="update-table-for-raw-material" title="新增原材料资料" :visible.sync="dialogVisible" width="80%">
+  <el-dialog class="update-table-for-raw-material" title="新增原材料检测单" :visible.sync="dialogVisible" width="80%">
     <div class="cust-rows" style="margin-top: 6px; height: 60px; width: 100%;">
-      <div style="width: 30%; float: left;" class="own-defined-select">
+      <div style="width: 22%; float: left;" class="own-defined-select">
         <span class="select-before">
           品名/材质
         </span>
-        <el-select v-model="value4" clearable placeholder="请选择" style="float:left; width: 59%;">
+        <el-select v-model="value4" clearable placeholder="请选择" style="float:left; width: 52%;">
           <el-option
             v-for="item in options"
             :key="item.value"
@@ -14,11 +14,11 @@
           </el-option>
         </el-select>
       </div>
-      <div style="width: 66%; float: left; margin-left:2%;" class="own-defined-select">
+      <div style="width: 76%; float: left; margin-left:1%;" class="own-defined-select">
         <span class="select-before">
           供应商
         </span>
-        <el-select v-model="value4" clearable placeholder="请选择" style="float:left; width: 30%;">
+        <el-select v-model="value4" clearable placeholder="请选择" style="float:left; width: 10%;">
           <el-option
             v-for="item in options"
             :key="item.value"
@@ -26,20 +26,16 @@
             :value="item.value">
           </el-option>
         </el-select>
-      </div>
-    </div>
-    <div class="cust-rows" style="margin-top: 6px; height: 60px; width: 100%;">
-      <el-input placeholder="请输入内容" v-model="input" class="first-col-row" style="width: 30%; float: left;">
-        <template slot="prepend">&nbsp;&nbsp;&nbsp;批&nbsp;&nbsp;&nbsp;&nbsp;号&nbsp;&nbsp;</template>
-      </el-input>
-      <div style="width: 66%; float: left; margin-left:2%;" class="own-defined-select">
-        <el-input placeholder="请输入内容" v-model="input" class="first-col-row" style="width: 48%; float: left;">
-          <template slot="prepend">&nbsp;&nbsp;&nbsp;数&nbsp;&nbsp;&nbsp;&nbsp;量&nbsp;&nbsp;</template>
+        <el-input placeholder="请输入内容" v-model="input" class="first-col-row" style="width: 22%; float: left; margin-left: 2%;">
+          <template slot="prepend">批&nbsp;号</template>
+        </el-input>
+        <el-input placeholder="请输入内容" v-model="input" class="first-col-row" style="width: 22%; float: left; margin-left: 2%;">
+          <template slot="prepend">数&nbsp;量</template>
         </el-input>
         <span class="select-before" style="margin-left: 18px;">
-          单&nbsp;&nbsp;位
+          单位
         </span>
-        <el-select v-model="value4" clearable placeholder="请选择" style="float:left; width: 30%;">
+        <el-select v-model="value4" clearable placeholder="请选择" style="float:left; width: 15%;">
           <el-option
             v-for="item in options"
             :key="item.value"
@@ -50,7 +46,7 @@
       </div>
     </div>
     <div class="cust-rows" style="margin-top: 6px; height: 60px; width: 100%;">
-      <div style="width: 100%; float: left;">
+      <div style="width: 100%; float: left; text-align: left; padding-left: 1%;">
         <span>代表验收产品: {{symbol}}</span>
         <span>代表验收产品: {{symbol}}</span>
       </div>
@@ -89,7 +85,9 @@ export default {
   props: {
     data: {
       type: Array,
-      default() { return [] }
+      default() {
+        return []
+      }
     },
     visible: {
       type: Boolean,
@@ -105,16 +103,20 @@ export default {
         {
           value: '选项1',
           label: '黄金糕'
-        }, {
+        },
+        {
           value: '选项2',
           label: '双皮奶'
-        }, {
+        },
+        {
           value: '选项3',
           label: '蚵仔煎'
-        }, {
+        },
+        {
           value: '选项4',
           label: '龙须面'
-        }, {
+        },
+        {
           value: '选项5',
           label: '北京烤鸭'
         }
@@ -141,24 +143,25 @@ export default {
 
 <style lang="scss">
 @import '@/assets/css/Dialog/index.scss';
-  .update-table-for-raw-material {
+.update-table-for-raw-material {
+  width: 100%;
+  height: 800px;
+  .cust-rows {
     width: 100%;
-    height: 800px;
-    .cust-rows {
-      width: 100%;
-      .first-col-row {
-        float: left;
-        width: 40%;
-      }
-      .sec-col-row {
-        float: left;
-      }
-      .el-table__body {
-        .el-table td, .el-table th {
-          height: 20px;
-          padding: 6px 0;
-        }
+    .first-col-row {
+      float: left;
+      width: 40%;
+    }
+    .sec-col-row {
+      float: left;
+    }
+    .el-table__body {
+      .el-table td,
+      .el-table th {
+        height: 20px;
+        padding: 6px 0;
       }
     }
   }
+}
 </style>

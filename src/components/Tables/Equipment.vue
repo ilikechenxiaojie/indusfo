@@ -1,14 +1,14 @@
 <template>
   <div class="informs">
     <el-card class="informs-card">
-      <div slot="header" class="clearfix" style="height: 2.4rem;">
+      <!-- <div slot="header" class="clearfix" style="height: 2.4rem;">
         <span style="float: left; text-align: left; width:30%; color:#bbb; font-size: 0.8rem;">
           <i class="el-icon-info"></i>&nbsp;&nbsp;设备资料
           <br>
           用于维护客户的基础资料(注:要保证客户编号的唯一性, 不可重复)
           <hr style=" margin: 0.6rem 0;">
         </span>
-      </div>
+      </div> -->
       <span style="float: left; margin-bottom: 1rem; width: 66%;" class="btn-group">
         <el-button size="small" @click="showequipmentDialog">新增</el-button>
         <el-button size="small ">编辑</el-button>

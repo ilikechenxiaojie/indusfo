@@ -1,14 +1,14 @@
 <template>
   <div class="informs">
     <el-card class="informs-card">
-      <div slot="header" class="clearfix" style="height: 2.4rem;">
+      <!-- <div slot="header" class="clearfix" style="height: 2.4rem;">
         <span style="float: left; text-align: left; width:30%; color:#bbb; font-size: 0.8rem;">
           <i class="el-icon-info"></i>&nbsp;&nbsp;产品资料
           <br>
           用于维护需要系统管控的产品信息、工艺版本和各工序的工艺目标和工艺条件
           <hr style=" margin: 0.6rem 0;">
         </span>
-      </div>
+      </div> -->
       <span style="float: left; margin-bottom: 1rem; width: 66%;" class="btn-group">
         <el-button size="small" @click="showProjectsDialog">新增</el-button>
         <el-button size="small ">编辑</el-button>

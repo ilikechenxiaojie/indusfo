@@ -1,14 +1,14 @@
 <template>
   <div class="informs">
     <el-card class="informs-card">
-      <div slot="header" class="clearfix" style="height: 2.4rem;">
+      <!-- <div slot="header" class="clearfix" style="height: 2.4rem;">
         <span style="float: left; text-align: left; width:30%; color:#bbb; font-size: 0.8rem;">
           <i class="el-icon-info"></i>&nbsp;&nbsp;磨具资料
           <br>
           用于维护需要系统管控的磨具信息
           <hr style=" margin: 0.6rem 0;">
         </span>
-      </div>
+      </div> -->
       <div class="btn-more" style="float: left; margin-bottom: 1rem">
         <el-button size="small" @click="showAbrasiveDialog">新增</el-button>
         <el-button size="small">编辑</el-button>

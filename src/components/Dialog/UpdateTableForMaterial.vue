@@ -21,7 +21,7 @@
               :value="item.value">
             </el-option>
           </el-select>
-          <span style="margin-left: 20px; width: 60px; float:left; background-color: #f5f7fa; color: #909399; border: 1px solid #dcdfe6; border-radius: 4px 0 0 4px;padding: 13px 20px;">
+          <span class="select-before" style="margin-left: 20px;">
             企业性质
           </span>
           <el-select v-model="value" clearable placeholder="请选择" style="float:left; width: 25%;">

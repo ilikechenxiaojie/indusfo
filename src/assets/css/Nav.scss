@@ -1,40 +1,79 @@
 .nav {
   height: 40px;
   line-height: 40px;
+
   .el-menu-demo {
     height: 40px;
     line-height: 40px;
+
     .el-menu--horizontal>.el-submenu .el-submenu__title {
       height: 40px;
       line-height: 40px;
     }
+
     li {
       height: 40px;
       line-height: 40px;
+
       .el-submenu__title {
         height: 40px;
         line-height: 40px;
-        font-size: 0.8rem;
+        font-weight: bold;
+        font-size: 0.9rem;
       }
     }
   }
+
   .search-btn {
     margin-top: 1px;
   }
+
   position: relative;
   overflow: hidden;
+
   .el-icon-arrow-down {
     color: #fff;
   }
+
   .item {
     position: absolute;
     right: 10%;
-    top: 14%;
+    top: 0;
+
     .el-button.is-circle {
       padding: 8px;
     }
+
     .share-button {
       padding: 8px 15px 8px 15px;
+      height: 40px;
+      width: 90px;
+      i {
+        font-weight: bold;
+        font-size: 16px;
+      }
+    }
+  }
+
+  .head-pic {
+    position: absolute;
+    right: 2%;
+    top: 0;
+    .h-pic {
+      width: 40px;
+      height: 40px;
+      border-radius: 40px;
+      overflow: hidden;
+      float: left;
+      background: url('~@/assets/images/headPic.png') no-repeat center;
+      background-size: 80% 80%;    /* 通过百分比设置 */
+    }
+    .desc-pic {
+      float: left;
+      margin-left: 10px;
+      color: #fff;
+      color: 0.8rem;
+      cursor: pointer;
     }
   }
 }

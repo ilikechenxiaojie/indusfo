@@ -5,12 +5,12 @@
         <el-menu-item index="/test" v-if="route.children[0].path === 'test' && !route.hidden" :key="index">
           <template>
             <router-link :to="route.path" :key="route.name">
-              <span style="font-size: 1.2rem; height: 40px; line-height: 40px;">{{route.name}}</span>
+              <span style="font-size: 1.4rem; height: 40px; line-height: 40px; font-weight: bold;">{{route.name}}</span>
             </router-link>
           </template>
         </el-menu-item>
         <el-submenu v-if="route.hidden" :key="index" :index="route.path" style="height: 40px; line-height: 40px;">
-          <template slot="title" style="height: 40px; line-height: 40px;">{{route.name}}</template>
+          <template slot="title" style="height: 40px; line-height: 40px; font-size: 1.2rem;">{{route.name}}</template>
           <template v-for="child in route.children">
             <router-link :to="route.path + '/' + child.path" :key="child.name">
               <el-menu-item :index="route.path + '/' + child.path">
@@ -20,10 +20,22 @@
           </template>
         </el-submenu>
       </template>
-      <search-button :placeholder="placeholder"/>
-      <el-badge class="item" :value="200" :max="99">
+      <!-- <search-button :placeholder="placeholder"/> -->
+      <!-- <el-badge class="item" :value="200" :max="99">
         <el-button class="share-button" icon="el-icon-bell" type="primary"></el-button>
-      </el-badge>
+      </el-badge> -->
+      <div class="item">
+        <div class="notices-num" style="text-align:center; line-height: 20px; font-size:0.8rem; width:20px; height:20px; color: #fff; border-radius: 20px; background: red; position: absolute; right: 5%; top: 20%;">
+          6
+        </div>
+        <el-button class="share-button new-btn" icon="el-icon-bell" type="primary"></el-button>
+      </div>
+      <div class="head-pic">
+        <span class="h-pic"></span>
+        <div class="desc-pic">
+          <dl>鲍总</dl>
+        </div>
+      </div>
     </el-menu>
   </div>
 </template>
